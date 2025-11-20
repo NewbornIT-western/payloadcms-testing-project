@@ -1,0 +1,64 @@
+/* Custom styles for Payload Admin */
+
+/* Prevent hydration flicker in admin */
+html[data-theme], 
+html[data-theme] body {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Handle ALL browser extension attributes gracefully */
+body[bis_register],
+body[class*="__processed_"],
+body[data-new-gr-c-s-check-loaded],
+body[data-gr-ext-installed],
+body[data-lastpass-icon-root],
+body[data-1password],
+body[data-dashlane],
+body[__processed_12dc4dd6-873e-4a98-8b01-ef0b8c9c45f7__] {
+  /* Allow browser extensions without hydration errors */
+  display: block !important;
+  /* Force stable rendering */
+  transform: translateZ(0);
+}
+
+/* Handle dynamic extension attributes with wildcards */
+body[data-new-gr-c-s-check-loaded*="14."],
+body[class*="__processed_"] {
+  /* Grammarly and other extension processors */
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Suppress hydration visual flickers */
+.payload__modal-container,
+.payload__toast-container {
+  opacity: 1 !important;
+}
+
+/* Custom admin theme adjustments */
+:root[data-theme="dark"] {
+  --payload-color-primary: #0070f3;
+}
+
+/* Ensure consistent rendering */
+* {
+  box-sizing: border-box;
+}
+
+/* Anti-flicker for admin components */
+[data-payload-admin-bar] {
+  visibility: visible !important;
+}
+
+/* Force stable layout for extension-modified body */
+body[suppressHydrationWarning="false"] {
+  /* Override Payload's suppressHydrationWarning=false */
+  --suppress-hydration: true !important;
+}
+
+/* Hide extension artifacts visually */
+body::before {
+  content: "";
+  display: none;
+}

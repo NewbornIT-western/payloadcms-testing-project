@@ -6,12 +6,20 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "create-first-user": "node scripts/create-first-user.js",
+    "create-admin": "node scripts/create-admin.mjs"
   },
   "dependencies": {
-    "next": "16.0.3",
-    "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "@payloadcms/db-mongodb": "^3.64.0",
+    "@payloadcms/next": "^3.64.0",
+    "@payloadcms/richtext-lexical": "^3.64.0",
+    "graphql": "^16.12.0",
+    "next": "^15.2.3",
+    "payload": "^3.64.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -19,8 +27,9 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.0.3",
+    "eslint-config-next": "^15.2.3",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "type": "module"
 }
